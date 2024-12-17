@@ -1,0 +1,11 @@
+@use "sass-toolkit" as st;
+
+// Basis for typography on page
+
+@mixin base-typography {
+    font-family: "League Spartan", sans-serif;
+    font-size: st.px2rem(17);
+    font-weight: 500;
+}
+
+// Modifications of base

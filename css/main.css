@@ -1,3 +1,80 @@
+:root {
+  --color-notification-bg: hsl(301, 23%, 96%);
+  --color-testimonial-bg: hsl(301, 44%, 22%);
+  --color-testimonial-text: hsl(0, 0%, 100%);
+  --color-testimonial-text-accent: hsl(334, 80%, 67%);
+}
 
+.testimonial-component {
+  padding: 2.5rem 2rem 2.1875rem 2rem;
+  max-width: 21.875rem;
+  background-color: var(--color-testimonial-bg);
+  border-radius: 0.5rem;
+  color: var(--color-testimonial-text);
+}
+.testimonial-component .testimonial-caption {
+  display: flex;
+  flex-direction: row;
+  gap: 1.4375rem;
+  margin-bottom: 1.4375rem;
+}
+.testimonial-component .testimonial-caption img.caption-avatar {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  border-radius: 50%;
+}
+.testimonial-component .testimonial-caption .citation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.testimonial-component .testimonial-caption .citation cite {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-weight: 700;
+  font-style: normal;
+}
+.testimonial-component .testimonial-caption .citation .role {
+  font-weight: 400;
+  color: var(--color-testimonial-text-accent);
+}
+.testimonial-component .testimonial-quote {
+  line-height: 1.29;
+  letter-spacing: -0.3px;
+}
+
+body {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 5.125rem;
+  padding-bottom: 6.1875rem;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+
+.social-proof-section .section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.0625rem;
+  padding-bottom: 1.0625rem;
+  text-align: center;
+}
+.social-proof-section .base-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.social-proof-section .five-stars-section {
+  padding-bottom: 3.0625rem;
+}
+
+.notification {
+  background-color: var(--color-notification-bg);
+  border-radius: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0.9375rem;
+  text-align: center;
+}
 
 /*# sourceMappingURL=main.css.map */

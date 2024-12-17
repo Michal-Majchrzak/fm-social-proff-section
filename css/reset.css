@@ -1,0 +1,27 @@
+/* Based on https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* reset end */
+
+/*# sourceMappingURL=reset.css.map */

@@ -1,0 +1,51 @@
+@use "sass-toolkit" as st;
+
+@use "vars";
+@use "typography";
+@use "components";
+
+
+
+
+body {
+    //Layout
+    padding-left: st.px2rem(24);
+    padding-right: st.px2rem(24);
+    padding-top: st.px2rem(82);
+    padding-bottom: st.px2rem(99);
+
+    @include typography.base-typography;
+}
+
+.social-proof-section {
+    //Layout
+    
+    .section-header {
+        //Layout
+        @include st.layout-flex(column, false, st.px2rem(17));
+        padding-bottom: st.px2rem(17);
+        text-align: center;
+    }
+
+    .base-section {
+        //Layout
+        @include st.layout-flex(column, false, st.px2rem(16));
+    }
+
+    .five-stars-section {
+        //Layout
+        padding-bottom: st.px2rem(49);
+    }
+}
+
+.notification {
+    //Appearance
+    background-color: var(--color-notification-bg);
+    border-radius: st.px2rem(8);
+    //Layout
+    padding-top: st.px2rem(16);
+    padding-bottom: st.px2rem(15);
+
+    //Typography
+    text-align: center;
+}

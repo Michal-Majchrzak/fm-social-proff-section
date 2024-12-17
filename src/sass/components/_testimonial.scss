@@ -1,0 +1,62 @@
+@use "../sass-toolkit" as st;
+@use "../vars";
+
+// Mobile 
+.testimonial-component {
+    // Sem: <figure>
+    // Layout
+    padding: st.px2rem(40) st.px2rem(32) st.px2rem(35) st.px2rem(32);
+    max-width: st.px2rem(350);
+    // Appearance
+    background-color: vars.$c-testimonial-bg;
+    border-radius : st.px2rem(8);
+    // Typography
+    color: vars.$c-testimonial-text;
+
+    .testimonial-caption {
+        // Sem: <figcaption>
+        // Layout
+        @include st.layout-flex(row, false, st.px2rem(23));
+        margin-bottom: st.px2rem(23); // Need to be responsive based on viewport width
+
+        img.caption-avatar {
+            // Sem : <img>
+            // Constrains
+            max-width: st.px2rem(40);
+            max-height: st.px2rem(40);
+            // Appearance
+            border-radius: 50%;
+        }
+
+        .citation {
+            // Sem: <div>
+            // Layout
+            @include st.layout-flex(column);
+            justify-content: flex-end;
+
+            cite {
+                // Sem: <cite>
+                // Layout
+                padding-top: st.px2rem(4);
+                padding-bottom: st.px2rem(4);
+                // Typography
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            .role {
+                // Sem: <span>
+                // Typography
+                font-weight: 400;
+                color: vars.$c-testimonial-text-accent;
+            }
+        }
+    }
+
+    .testimonial-quote {
+        // Sem: <blockquote>
+        // Typography
+        line-height: 1.29;
+        letter-spacing: -0.3px;
+    }
+}
