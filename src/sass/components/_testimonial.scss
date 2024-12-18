@@ -1,7 +1,7 @@
 @use "../sass-toolkit" as st;
 @use "../vars";
 
-// Mobile 
+// Mobile / Desktop
 .testimonial-component {
     // Sem: <figure>
     // Layout
@@ -17,7 +17,8 @@
         // Sem: <figcaption>
         // Layout
         @include st.layout-flex(row, false, st.px2rem(23));
-        margin-bottom: st.px2rem(23); // Need to be responsive based on viewport width
+        flex-wrap: wrap;
+        margin-bottom: st.linear-func-clamp(23, 375, 31, 400);
 
         img.caption-avatar {
             // Sem : <img>

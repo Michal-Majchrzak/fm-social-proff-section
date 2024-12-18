@@ -1,5 +1,5 @@
 :root {
-  --color-notification-bg: hsl(301, 23%, 96%);
+  --color-5star-bar-bg: hsl(301, 23%, 96%);
   --color-testimonial-bg: hsl(301, 44%, 22%);
   --color-testimonial-text: hsl(0, 0%, 100%);
   --color-testimonial-text-accent: hsl(334, 80%, 67%);
@@ -16,7 +16,8 @@
   display: flex;
   flex-direction: row;
   gap: 1.4375rem;
-  margin-bottom: 1.4375rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(1.4375rem, 32vw + -6.0625rem, 1.9375rem);
 }
 .testimonial-component .testimonial-caption img.caption-avatar {
   max-width: 2.5rem;
@@ -41,6 +42,24 @@
 .testimonial-component .testimonial-quote {
   line-height: 1.29;
   letter-spacing: -0.3px;
+}
+
+.five-star-bar {
+  background-color: var(--color-5star-bar-bg);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9375rem;
+  padding: clamp(1rem, 3.8095238095vw + 0.1071428571rem, 1.25rem) 2rem clamp(0.9375rem, 4.7619047619vw + -0.1785714286rem, 1.25rem);
+}
+.five-star-bar .stars {
+  height: 1rem;
+  max-width: unset;
+}
+.five-star-bar p {
+  font-weight: 700;
+  color: var(--color-testimonial-bg);
 }
 
 body {
@@ -69,12 +88,13 @@ body {
   padding-bottom: 3.0625rem;
 }
 
-.notification {
-  background-color: var(--color-notification-bg);
-  border-radius: 0.5rem;
-  padding-top: 1rem;
-  padding-bottom: 0.9375rem;
-  text-align: center;
+@media (min-width: 28rem) {
+  .five-star-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,30 @@
+@use "../sass-toolkit" as st;
+@use "../vars";
+
+// Mobile / Desktop
+.five-star-bar {
+    // Sem: <div>
+    // Appearance
+    background-color: vars.$c-5star-bar-bg;
+    border-radius: st.px2rem(8);
+    // Layout
+    @include st.layout-flex(column);
+    align-items: center;
+    gap: st.px2rem(15);
+    
+    $padding-t: st.linear-func-clamp(16, 375, 20, 480);
+    $padding-b: st.linear-func-clamp(15, 375, 20, 480);
+    padding: $padding-t st.px2rem(32) $padding-b;
+
+    
+    .stars {
+        height: 1rem;
+        max-width: unset;
+    }
+
+    p {
+        // Typography
+        font-weight: 700;
+        color: vars.$c-testimonial-bg;
+    }
+}

@@ -4,9 +4,11 @@ $c-testimonial-bg: var(--color-testimonial-bg);
 $c-testimonial-text: var(--color-testimonial-text);
 $c-testimonial-text-accent: var(--color-testimonial-text-accent);
 
+$c-5star-bar-bg: var(--color-5star-bar-bg);
+
 :root {
     // Colors
-    --color-notification-bg: hsl(301, 23%, 96%);
+    --color-5star-bar-bg: hsl(301, 23%, 96%);
     --color-testimonial-bg: hsl(301, 44%, 22%);
     --color-testimonial-text: hsl(0, 0%, 100%);
     --color-testimonial-text-accent: hsl(334, 80%, 67%);

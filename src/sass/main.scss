@@ -38,14 +38,13 @@ body {
     }
 }
 
-.notification {
-    //Appearance
-    background-color: var(--color-notification-bg);
-    border-radius: st.px2rem(8);
-    //Layout
-    padding-top: st.px2rem(16);
-    padding-bottom: st.px2rem(15);
+// Queries
 
-    //Typography
-    text-align: center;
+@media (min-width: st.px2rem(448)) {
+    // Component -> Five Star Bar
+    .five-star-bar {
+        @include st.layout-flex(row);
+        justify-content: flex-start;
+        gap: st.px2rem(32);
+    }
 }
