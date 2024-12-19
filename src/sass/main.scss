@@ -20,6 +20,7 @@ body {
     padding-right: st.linear-func-clamp(24, 768, 165, 1440);
     padding-top: st.linear-func-clamp(82, 768, 118, 1440);
     padding-bottom: st.px2rem(99);
+    min-height: 100dvh;
     //Typography
     @include typography.base-typography;
 }

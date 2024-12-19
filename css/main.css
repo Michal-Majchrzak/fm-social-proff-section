@@ -76,6 +76,7 @@ body {
   padding-right: clamp(1.5rem, 20.9821428571vw + -8.5714285714rem, 10.3125rem);
   padding-top: clamp(5.125rem, 5.3571428571vw + 2.5535714286rem, 7.375rem);
   padding-bottom: 6.1875rem;
+  min-height: 100dvh;
   font-family: "League Spartan", sans-serif;
   font-size: 1.0625rem;
   font-weight: 500;
