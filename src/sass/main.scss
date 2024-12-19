@@ -5,10 +5,20 @@
 @use "components";
 
 body {
+    //Background
+    background-image: 
+        url("../assets/images/bg-pattern-top-desktop.svg"),
+        url("../assets/images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat;
+    background-position-x: left, center;
+    background-position-y: top, bottom;
+    background-size: min(100vw, 36.5rem), auto;
     //Layout
+    @include st.layout-flex(column);
+    align-items: center;
     padding-left: st.linear-func-clamp(24, 768, 165, 1440);
     padding-right: st.linear-func-clamp(24, 768, 165, 1440);
-    padding-top: st.px2rem(82);
+    padding-top: st.linear-func-clamp(82, 768, 118, 1440);
     padding-bottom: st.px2rem(99);
     //Typography
     @include typography.base-typography;
@@ -21,13 +31,13 @@ body {
     row-gap: st.px2rem(39);
     column-gap: st.linear-func-clamp(0, 1158, 125, 1440);
     justify-content: center;
-    align-items: center;
     padding-bottom: st.linear-func-clamp(49, 375, 71, 1440);
+    width: 100%;
 
     .text-section {
         //Layout
         @include st.layout-flex(column);
-        gap: st.px2rem(23);
+        gap: st.linear-func-clamp(23, 768, 26, 1440);
         max-width: st.px2rem(445);
         
         .title {
@@ -43,7 +53,7 @@ body {
             //Typography
             font-size: st.px2rem(19);
             line-height: 1.3157;
-            letter-spacing: st.px2rem(-0.63);
+            letter-spacing: st.px2rem(-0.6);
             text-align: center;
             color: vars.$c-description-text;
         }
@@ -52,9 +62,12 @@ body {
     .stars-section {
         //Layout
         @include st.layout-flex(column, false, st.px2rem(16));
+        $padding-t: clamp(0rem, calc(100vw - 34rem), st.px2rem(27));
         $padding-l: clamp(0rem, calc(100vw - 34rem), st.px2rem(48));
         $padding-r: clamp(0rem, calc(100vw - 34rem), st.px2rem(47));
-        padding: 0 $padding-r 0 $padding-l;
+        padding: $padding-t $padding-r 0 $padding-l;
+        flex-grow: 1;
+        max-width: st.px2rem(540);
     }
 }
 
@@ -76,9 +89,14 @@ body {
         gap: st.px2rem(32);
     }
 }
+@media (min-width: st.px2rem(1085)) {
+    body {
+        background-position-x: left, right;
+    }
+}
 @media (min-width: st.px2rem(1440)) {
     .header {
-        justify-content: flex-start;
+        // justify-content: flex-start;
 
         .text-section {
             .title, .description {
