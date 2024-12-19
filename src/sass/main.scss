@@ -4,47 +4,60 @@
 @use "typography";
 @use "components";
 
-
-
-
 body {
     //Layout
     padding-left: st.px2rem(24);
     padding-right: st.px2rem(24);
     padding-top: st.px2rem(82);
     padding-bottom: st.px2rem(99);
-
+    //Typography
     @include typography.base-typography;
 }
 
-.social-proof-section {
+.testimonials-section {
     //Layout
-    
-    .section-header {
-        //Layout
-        @include st.layout-flex(column, false, st.px2rem(17));
-        padding-bottom: st.px2rem(17);
-        text-align: center;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: st.px2rem(16);
+    column-gap: st.px2rem(30);
+    justify-content: center;
+}
 
-    .base-section {
-        //Layout
-        @include st.layout-flex(column, false, st.px2rem(16));
-    }
-
-    .five-stars-section {
-        //Layout
-        padding-bottom: st.px2rem(49);
-    }
+.stars-section {
+    //Layout
+    @include st.layout-flex(column, false, st.px2rem(16));
+    $padding-l: clamp(0rem, calc(100vw - 34rem), st.px2rem(48));
+    $padding-r: clamp(0rem, calc(100vw - 34rem), st.px2rem(47));
+    padding: 0 $padding-r 0 $padding-l;
 }
 
 // Queries
-
 @media (min-width: st.px2rem(448)) {
     // Component -> Five Star Bar
     .five-star-bar {
         @include st.layout-flex(row);
         justify-content: flex-start;
         gap: st.px2rem(32);
+    }
+}
+@media (min-width: st.px2rem(1158)) {
+    .testimonial-component {
+        &:nth-child(3n) {
+            transform: translateY(2rem);
+        }
+        &:nth-child(3n - 1) {
+            transform: translateY(1rem);
+        }
+    }
+    .testimonials-section {
+        padding-bottom: 2rem;
+    }
+    .five-star-bar {
+        &:first-child {
+            transform: translateX(-3rem);
+        }
+        &:last-child {
+            transform: translateX(st.px2rem(47));
+        }
     }
 }
