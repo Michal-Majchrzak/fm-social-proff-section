@@ -6,12 +6,56 @@
 
 body {
     //Layout
-    padding-left: st.px2rem(24);
-    padding-right: st.px2rem(24);
+    padding-left: st.linear-func-clamp(24, 768, 165, 1440);
+    padding-right: st.linear-func-clamp(24, 768, 165, 1440);
     padding-top: st.px2rem(82);
     padding-bottom: st.px2rem(99);
     //Typography
     @include typography.base-typography;
+}
+
+.header {
+    //Layout
+    @include st.layout-flex(row);
+    flex-wrap: wrap;
+    row-gap: st.px2rem(39);
+    column-gap: st.linear-func-clamp(0, 1158, 125, 1440);
+    justify-content: center;
+    align-items: center;
+    padding-bottom: st.linear-func-clamp(49, 375, 71, 1440);
+
+    .text-section {
+        //Layout
+        @include st.layout-flex(column);
+        gap: st.px2rem(23);
+        max-width: st.px2rem(445);
+        
+        .title {
+            //Typography
+            font-size: st.linear-func-clamp(40, 375, 56, 1440);
+            font-weight: 700;
+            line-height: st.linear-func-clamp(32, 375, 48, 1440);
+            letter-spacing: st.linear-func-clamp(-1.43, 375, -2, 1440);
+            text-align: center;
+            color: vars.$c-testimonial-bg;
+        }
+        .description {
+            //Typography
+            font-size: st.px2rem(19);
+            line-height: 1.3157;
+            letter-spacing: st.px2rem(-0.63);
+            text-align: center;
+            color: vars.$c-description-text;
+        }
+    }
+    
+    .stars-section {
+        //Layout
+        @include st.layout-flex(column, false, st.px2rem(16));
+        $padding-l: clamp(0rem, calc(100vw - 34rem), st.px2rem(48));
+        $padding-r: clamp(0rem, calc(100vw - 34rem), st.px2rem(47));
+        padding: 0 $padding-r 0 $padding-l;
+    }
 }
 
 .testimonials-section {
@@ -23,14 +67,6 @@ body {
     justify-content: center;
 }
 
-.stars-section {
-    //Layout
-    @include st.layout-flex(column, false, st.px2rem(16));
-    $padding-l: clamp(0rem, calc(100vw - 34rem), st.px2rem(48));
-    $padding-r: clamp(0rem, calc(100vw - 34rem), st.px2rem(47));
-    padding: 0 $padding-r 0 $padding-l;
-}
-
 // Queries
 @media (min-width: st.px2rem(448)) {
     // Component -> Five Star Bar
@@ -40,7 +76,16 @@ body {
         gap: st.px2rem(32);
     }
 }
-@media (min-width: st.px2rem(1158)) {
+@media (min-width: st.px2rem(1440)) {
+    .header {
+        justify-content: flex-start;
+
+        .text-section {
+            .title, .description {
+                text-align: left;
+            }
+        }
+    }
     .testimonial-component {
         &:nth-child(3n) {
             transform: translateY(2rem);
@@ -51,6 +96,7 @@ body {
     }
     .testimonials-section {
         padding-bottom: 2rem;
+        justify-content: flex-start;
     }
     .five-star-bar {
         &:first-child {
